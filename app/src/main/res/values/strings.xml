@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ImageActivity</string>
+
+    <string name="defaultDesc">Select an image for full display.</string>
 </resources>
