@@ -14,11 +14,20 @@ class ImageActivity : AppCompatActivity() {
 
         // define recycler view for menu and selected image/description:
         val selectedImage : ImageView = findViewById(R.id.selectedImage)
-        val selectedDesc : TextView = findViewById(R.id.selectedDesc)
+        val selectedDesc : TextView = findViewById(R.id.selectedImageText)
         val imageMenu : RecyclerView = findViewById(R.id.imageMenu)
 
-        // declare all image sources and text:
-        val allImages : Array<MyPicture> = arrayOf(
+        // properties of the recycler view + grid layout manager
+        imageMenu.layoutManager = GridLayoutManager(this, 2)
+
+        // assemble adapter + new layout file (inside adapter file)
+        val allImages = createImageArray()
+        imageMenu.adapter = ImageAdapter(this, allImages)
+    }
+
+    // declare all image sources and text
+    private fun createImageArray(): ArrayList<MyPicture> {
+        return arrayListOf(
             MyPicture("Astronaut in Space", R.drawable.astronaut_in_space),
             MyPicture("Aurora Borealis", R.drawable.aurora_borealis),
             MyPicture("Blue Clouds", R.drawable.blue_clouds),
@@ -32,14 +41,5 @@ class ImageActivity : AppCompatActivity() {
             MyPicture("Rice Fields", R.drawable.rice_fields),
             MyPicture("Sunset and Tree", R.drawable.sunset_and_tree)
         )
-
-        // properties of the recycler view + grid layout manager
-        val glm = GridLayoutManager(this, 2)
-        imageMenu.layoutManager = glm
-
-        // assemble adapter + new layout file (inside adapter file)
-
-        // in the event that the user selects the image from the menu
-
     }
 }
