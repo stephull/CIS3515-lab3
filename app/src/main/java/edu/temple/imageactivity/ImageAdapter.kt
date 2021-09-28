@@ -42,7 +42,7 @@ class ImageAdapter (_context : Context, _allImages : ArrayList<MyPicture>) : Rec
 
     // binds view holder
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.pictureView.setImageResource(allImages[position].imageSrc)
+        holder.pictureView.setImageResource(allImages[position].src)
     }
 
     // returns number of items within MyPicture data object
