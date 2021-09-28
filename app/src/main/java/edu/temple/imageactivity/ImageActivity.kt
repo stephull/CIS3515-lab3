@@ -14,15 +14,25 @@ class ImageActivity : AppCompatActivity() {
 
         // define recycler view for menu and selected image/description:
         val selectedImage : ImageView = findViewById(R.id.selectedImage)
-        val selectedDesc : TextView = findViewById(R.id.selectedImageText)
+        val selectedImageText : TextView = findViewById(R.id.selectedImageText)
         val imageMenu : RecyclerView = findViewById(R.id.imageMenu)
 
         // properties of the recycler view + grid layout manager
         imageMenu.layoutManager = GridLayoutManager(this, 2)
 
-        // assemble adapter + new layout file (inside adapter file)
+        // call image data object
         val allImages = createImageArray()
-        imageMenu.adapter = ImageAdapter(this, allImages)
+
+        // assemble adapter and click listener from adapter class
+        val adapter = ImageAdapter(this, allImages)
+        imageMenu.adapter = adapter
+        adapter.setOnItemClickListener(object : ImageAdapter.OnItemClickListener {
+            override fun onItemClick(position: Int) {
+                val item = allImages[position]
+                selectedImage.setImageResource(item.imageSrc)
+                selectedImageText.text = item.desc
+            }
+        })
     }
 
     // declare all image sources and text
