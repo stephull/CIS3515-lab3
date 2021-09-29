@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class ImageActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,11 +16,8 @@ class ImageActivity : AppCompatActivity() {
         val selectedImgText : TextView = findViewById(R.id.selectedImageText)
         val imageMenu : RecyclerView = findViewById(R.id.imageMenu)
 
-        // properties of the recycler view + grid layout manager
-        val glm = GridLayoutManager(this@ImageActivity, 3)
-        imageMenu.layoutManager = glm
-
-        // call image data object
+        // call grid layout manager and image data object
+        imageMenu.layoutManager = GridLayoutManager(this@ImageActivity, 3)
         val allImages = createImageArray()
 
         // assemble adapter

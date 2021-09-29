@@ -9,13 +9,13 @@ class ImageAdapter (_context : Context, _allImages : ArrayList<MyPicture>) : Rec
     private val context = _context
     private val allImages = _allImages
 
-    // declare new listener
-    private lateinit var myListener : OnItemClickListener
-
-    // create interface for your new listener
+    // interface for setting up new on-click listener; will be overridden
     interface OnItemClickListener {
         fun onItemClick(position: Int)
     }
+
+    // declare new listener
+    private lateinit var myListener : OnItemClickListener
 
     // mutator (setter) function for listener above
     fun setOnItemClickListener(listener : OnItemClickListener) {
