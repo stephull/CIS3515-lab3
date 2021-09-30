@@ -3,13 +3,17 @@
 * For Mobile Application Development
 
 ## Synopsis:
-*
+* Create a working app using RecyclerView to display an image with its selected text
 
 ## Screenshots:
-![Before]()
-![After]()
+![Before](before.png)
+![After](after.png)
 
-## Sources:
+## Commits:
+Total commits: 12
+Last commit made: September 29, 2021
+
+## Image Sources:
 * https://www.pexels.com/photo/snow-sea-dawn-landscape-6043246/
 * https://www.pexels.com/photo/person-walking-between-green-forest-trees-15286/
 * https://www.pexels.com/photo/silhouette-of-tree-near-body-of-water-during-golden-hour-36717/ 
